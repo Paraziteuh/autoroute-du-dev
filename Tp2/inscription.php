@@ -21,7 +21,6 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #778899;
-	  text-align: center;
     }
 
     /* Mise en forme du titre */

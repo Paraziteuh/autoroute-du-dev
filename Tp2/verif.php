@@ -17,14 +17,9 @@ if($compteDAO->verifCompte()){
   header('Location:accueil.php');
   exit();
 } else {
-
-
-  header('Location:index.php');
-
   $php_errormsg = "Login ou mot de passe incorrects. Veuillez réessayer ou créer un compte.";
 }
 
 ?>
 
 
-z

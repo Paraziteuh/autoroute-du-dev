@@ -23,7 +23,7 @@ class CompteDAO {
         $stmt->execute();
         $result = $stmt->rowCount();
 
-    /* Vérifiez si les informations du compte sont correctes */
+    /* Vérifiez si les informations du compte sont correctes*/
 
     if ($result >=1) {
       return true;

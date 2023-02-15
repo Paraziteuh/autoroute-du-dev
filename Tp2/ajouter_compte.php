@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 	// Insertion du compte dans la base de données
-	$stmt = $bdd->prepare('INSERT INTO account (login, password_hash) VALUES (:login, :password_hash)');
+	$stmt = $bdd->prepare('INSERT INTO users (login, password) VALUES (:login, :password_hash)');
 	$stmt->bindParam(':login', $login);
 	$stmt->bindParam(':password_hash', $password_hash);
 	$stmt->execute();
