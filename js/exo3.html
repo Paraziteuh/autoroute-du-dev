@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <h1>JavaScript</h1>
+
+    <h2>bouton alerte</h2>
+    <button onclick="alert('C est une betise')">CLIQUE !!!!!</button>
+
+    <h2>fonction alerte</h2>
+    <p onmouseover="afficherAlerte('Toujours la meme connerie')">Passez la souris ici !!!!</p>
+    <img src="C:\Users\Anthony\Desktop\js\Nouveau dossier\donjon_ext.png" onmouseover="afficherAlerte('clin doeil au dev python')">
+    <script>
+      function afficherAlerte(texte) {
+        alert(texte);
+      }
+    </script>
+
+    <h2>Tableau</h2>
+    <table>
+      <tbody>
+        <script>
+          for (var i = 1; i <= 10; i++) {
+            document.write("<tr>");
+            for (var j = 1; j <= 10; j++) {
+              document.write("<td>" + i + "," + j + "</td>");
+            }
+            document.write("</tr>");
+          }
+        </script>
+      </tbody>
+    </table>
+  </body>
+</html>
