@@ -1,1 +1,27 @@
+<?php
+
+// Fonction pour réaliser un XOR sur deux chaînes de caractères
+function stringxor($o1, $o2) {
+    $res = '';
+    // Boucle sur chaque caractère des chaînes de caractères
+    for($i=0; $i<strlen($o1); $i++) {
+        // XOR entre les caractères des deux chaînes
+        $res .= chr(ord($o1[$i]) ^ ord($o2[$i]));
+    }
+    return $res;
+}
+
+// Clé utilisée pour le XOR
+$key = "c92fcd618967933ac463feb85ba00d5a7ae52842";
+
+// Mot de passe encodé en Base64, récupéré depuis la base de données
+$encoded_password = base64_decode("VA5QA1cCVQgPXwEAXwZVVVsHBgtfUVBaV1QEAwIFVAJWAwBRC1tRVA==");
+
+// Décoder le mot de passe en utilisant la fonction stringxor et la clé
+$decoded_password = stringxor($key, $encoded_password);
+
+// Afficher le mot de passe décodé
+echo "Decoded password: " . $decoded_password . "\n";
+
+?>
 
